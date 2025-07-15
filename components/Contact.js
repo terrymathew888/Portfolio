@@ -57,7 +57,7 @@ export default function Contact() {
                         rel="noopener noreferrer"
                         className="text-gray-400 hover:text-gray-200 transition-colors"
                       >
-                        terry-mathew-285115327
+                        Click here to connect
                       </a>
                     </div>
                   </div>
