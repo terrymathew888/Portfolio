@@ -52,7 +52,7 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold text-gray-200">LinkedIn</h3>
                       <a 
-                        href="https://linkedin.com/in/terry-mathew-285115327" 
+                        href="https://www.linkedin.com/in/terry-mathew1" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-gray-400 hover:text-gray-200 transition-colors"
