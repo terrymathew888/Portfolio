@@ -2,10 +2,22 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Github, Zap, Shield, Users, Database } from 'lucide-react';
+import { ExternalLink, Github, Zap, Shield, Users, Database, X } from 'lucide-react';
 
 export default function Projects() {
   const [hoveredProject, setHoveredProject] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [modalGif, setModalGif] = useState('');
+
+  const openModal = (gifUrl) => {
+    setModalGif(gifUrl);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setModalGif('');
+  };
 
   const projects = [
     {
@@ -114,15 +126,25 @@ export default function Projects() {
                         <Github className="w-4 h-4" />
                         <span>Code</span>
                       </a>
-                      <a
-                        href={project.liveDemo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center space-x-2 text-gray-400 hover:text-gray-200 transition-colors"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        <span>Live Demo</span>
-                      </a>
+                      {project.id === 2 ? (
+                        <button
+                          onClick={() => openModal(project.liveDemo)}
+                          className="flex items-center space-x-2 text-gray-400 hover:text-gray-200 transition-colors"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          <span>Live Demo</span>
+                        </button>
+                      ) : (
+                        <a
+                          href={project.liveDemo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center space-x-2 text-gray-400 hover:text-gray-200 transition-colors"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          <span>Live Demo</span>
+                        </a>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
@@ -131,6 +153,39 @@ export default function Projects() {
           </div>
         </motion.div>
       </div>
+
+      {/* Modal for displaying GIF */}
+      {showModal && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
+          onClick={closeModal}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+            className="relative max-w-5xl max-h-[90vh] bg-gray-900 rounded-lg overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 z-10 bg-gray-800 hover:bg-gray-700 text-white rounded-full p-2 transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <div className="p-6">
+              <h3 className="text-2xl font-bold text-white mb-4">InvoiceFlow Demo</h3>
+              <img 
+                src={modalGif} 
+                alt="InvoiceFlow Demo" 
+                className="w-full h-auto rounded-lg shadow-lg"
+                style={{ maxHeight: '70vh', objectFit: 'contain' }}
+              />
+            </div>
+          </motion.div>
+        </div>
+      )}
     </section>
   );
 }
