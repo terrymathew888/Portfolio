@@ -19,7 +19,9 @@ export default function Projects() {
         { icon: Users, text: "Supports 15+ concurrent users" },
         { icon: Zap, text: "25% gas cost reduction" }
       ],
-      gradient: "from-gray-700 to-gray-600"
+      gradient: "from-gray-700 to-gray-600",
+      githubUrl: "#",
+      liveDemo: "https://propchain-demo.example.com"
     },
     {
       id: 2,
@@ -32,7 +34,9 @@ export default function Projects() {
         { icon: Users, text: "25+ active users" },
         { icon: Zap, text: "2-second load times" }
       ],
-      gradient: "from-gray-600 to-gray-700"
+      gradient: "from-gray-600 to-gray-700",
+      githubUrl: "https://github.com/terrymathew888/InvoiceFlow",
+      liveDemo: "https://raw.githubusercontent.com/terrymathew888/InvoiceFlow/622d3fd6ac4a547a1e640dfe95a6da404f48fd64/demo/invoiceflow.gif"
     }
   ];
 
@@ -102,7 +106,7 @@ export default function Projects() {
                     
                     <div className="flex space-x-4 pt-4">
                       <a 
-                        href={project.id === 2 ? "https://github.com/terrymathew888/InvoiceFlow" : "#"} 
+                        href={project.githubUrl} 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="flex items-center space-x-2 text-gray-400 hover:text-gray-200 transition-colors"
@@ -110,10 +114,15 @@ export default function Projects() {
                         <Github className="w-4 h-4" />
                         <span>Code</span>
                       </a>
-                      <button className="flex items-center space-x-2 text-gray-400 hover:text-gray-200 transition-colors">
+                      <a
+                        href={project.liveDemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center space-x-2 text-gray-400 hover:text-gray-200 transition-colors"
+                      >
                         <ExternalLink className="w-4 h-4" />
                         <span>Live Demo</span>
-                      </button>
+                      </a>
                     </div>
                   </CardContent>
                 </Card>
