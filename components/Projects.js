@@ -32,7 +32,7 @@ export default function Projects() {
         { icon: Zap, text: "25% gas cost reduction" }
       ],
       gradient: "from-gray-700 to-gray-600",
-      githubUrl: "#",
+      githubUrl: "https://github.com/terrymathew888/PropChain",
       liveDemo: "https://propchain-demo.example.com"
     },
     {
