@@ -32,8 +32,9 @@ export default function Projects() {
         { icon: Zap, text: "25% gas cost reduction" }
       ],
       gradient: "from-gray-700 to-gray-600",
-      githubUrl: "#",
-      liveDemo: "https://propchain-demo.example.com"
+      githubUrl: "https://github.com/terrymathew888/PropChain",
+      liveDemo: "https://www.youtube.com/embed/7TsAoL0x70w",
+      demoType: "video" 
     },
     {
       id: 2,
