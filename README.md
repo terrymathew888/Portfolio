@@ -60,7 +60,7 @@ terry-mathew-portfolio/
   - Handles $50K+ simulated transactions
   - Supports 15+ concurrent users
   - 25% gas cost reduction through optimization
-  - **GitHub**: [PropChain Repository](https://github.com/terrymathew888/PropChain)
+- **GitHub**: [PropChain Repository](https://github.com/terrymathew888/PropChain)
 
 ### InvoiceFlow - SaaS Invoice Management
 - **Description**: Role-based SaaS platform with real-time synchronization and PWA capabilities
