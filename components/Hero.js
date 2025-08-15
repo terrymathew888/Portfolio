@@ -9,8 +9,8 @@ export default function Hero() {
   };
 
   const downloadResume = () => {
-    window.open('https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/72dce87c7_resume.pdf', '_blank');
-  };
+    window.open('https://gzydqadlvbkcnoeuwlob.supabase.co/storage/v1/object/public/Resume/r%20(5).pdf', '_blank');
+  }; // updated resume link
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-hidden">
