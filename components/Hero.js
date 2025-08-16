@@ -133,7 +133,7 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
           >
-            Software Engineer | UTD CS Student | Blockchain & Cloud Enthusiast
+            Software Engineer | UTD CS Student | Full-Stack & SaaS Developer
           </motion.p>
           
           <motion.div 
